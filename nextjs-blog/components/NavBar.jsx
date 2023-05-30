@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './layout.module.css';
+import styles from './navbar.module.css';
 import Link from 'next/link';
+import React, { useState, useEffect } from "react"
 
 
 function ChooseEmoji(whichpage){
@@ -10,11 +10,43 @@ function ChooseEmoji(whichpage){
   return <h1 className={styles["emoji"]}>🌍</h1>
   }else if (whichpage.page=='about'){
   return <h1 className={styles["emoji"]}>🥸</h1>
+  }else if (whichpage.page=='posts'){
+    return <h1 className={styles["emoji"]}>📨</h1>
+    }
+}
+
+function NavBarColor(pages,scroll){
+  if (pages.page=='moments'){
+    if (scroll){
+      return styles['momentschangecolor']
+    }else{
+      return styles['navbar']
+    }
+  }else{
+    if(scroll){
+      return styles['changecolor']
+    }else{
+      return styles['navbar']
+    }
   }
 }
+
 export default function NavBar(pages){
+  const [scroll, setScroll] = useState(false)
+  function changeBackground() {
+    if (window.scrollY >= 66) {
+      setScroll(true)
+    } else {
+      setScroll(false)
+    }
+  }
+  useEffect(() => {
+    changeBackground()
+    // adding the event when scroll change background
+    window.addEventListener("scroll", changeBackground)
+  })
     return(
-      <nav className={styles["navbar"]}>
+      <nav className={NavBarColor(pages,scroll)}>
         <Link href="/" >
         <h1 className={styles["nav-logo"]} style={ pages.page=='moments' ? {'color':"white"} : {}}>Run润</h1>
         </Link>

@@ -5,10 +5,13 @@ import styles from '../styles/About.module.css';
 function Parag(){
     return(
         <div className={styles.main}>
+        <div>
+
          <Image src="/images/space.JPG"
-              width={600}
-              height={600}
-        />
+              width={2000}
+              height={2000}
+              />
+              </div>
         <div>
         <p>Hi this is me </p>
         <p>I am Run Li, which is actually 李润, I am a graduate from the 
@@ -18,7 +21,7 @@ function Parag(){
             tester, or automation engineer tester, whatever you call it. 
             Just doing the test anyway.🚦
         </p>
-        <ul className={styles.about}>
+        <ul className={styles.lists}>
             <li>Selenium</li>
             <li>Appium</li>
             <li>Postman</li>
@@ -33,7 +36,9 @@ function Parag(){
 export default function About(){
     return (
         <Layout about>
-        <Parag />
+        <div className={styles.about}>
+            <Parag />
+        </div>
         </Layout>
     )
 }

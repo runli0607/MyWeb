@@ -9,42 +9,6 @@ export const siteTitle = 'Run Li\'s';
 
 
 
-function PostsLayout(){
-  return(
-        <>
-        <Link href="/">
-          <Image
-            priority
-            src="/images/smile.jpg"
-            className={utilStyles.borderCircle}
-            height={108}
-            width={108}
-            alt=""
-          />
-        </Link>
-        <h2 className={utilStyles.headingLg}>
-          <Link href="/" className={utilStyles.colorInherit}>
-            {name}
-          </Link>
-        </h2>
-      </>
-      )
-}
-
-function HomeLayout(){
-  return (
-    <div className={styles.beach}>
-      <Image
-            priority
-            src="/images/beach.jpg"
-            height={1500}
-            width={1500}
-            alt=""
-          />
-          </div>
-  )
-}
-
 function MomentsLayout(){
   return (
     <>
@@ -60,9 +24,9 @@ function AboutLayout(){
   )
 }
 
-function MyFooter(){
+function MyFooter(props){
   return(
-    <footer className={styles.footer}>
+    <footer className={props.footer}>
         <small>copyright @ Run Li 李润</small>
       </footer>
   )
@@ -73,7 +37,6 @@ export default function Layout({ children, home, about, posts,moments}) {
       {home && (
         <>
       <NavBar page='home'/>
-        <HomeLayout />
         </>
       )}
       {moments && (
@@ -88,15 +51,26 @@ export default function Layout({ children, home, about, posts,moments}) {
       <AboutLayout />
         </>
       )}
+      {posts && (
+        <>
+      <NavBar page='posts'/>
+      <AboutLayout />
+        </>
+      )}
       <div className={styles.container}>
       <main>{children}</main>
-      {!home && (
+      {!(home||moments) && (
         <div className={styles.backToHome}>
           <Link href="/">← Back to home</Link>
         </div>
       )}
     </div>
-      <MyFooter className={styles.footer} />
+      {!moments && (
+      <MyFooter footer={styles.footer}/>
+      )}
+      {moments && (
+      <MyFooter footer={styles.momentsfooter}/>
+      )}
     </div>
   );
 }

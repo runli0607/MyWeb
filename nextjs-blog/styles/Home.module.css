@@ -89,3 +89,7 @@
     flex-direction: column;
   }
 }
+
+.beach > img {
+  margin-top: -294.5px;
+}

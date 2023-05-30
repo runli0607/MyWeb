@@ -3,6 +3,8 @@ import React, { useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import Layout from "../components/layout"
 import styles from '../styles/Moments.module.css'
+import Places from '../components/Places.jsx'
+
 function Box(props) {
   // This reference will give us direct access to the mesh
   const mesh = useRef()
@@ -30,12 +32,22 @@ export default function moments(){
 return(
 <Layout moments>
 <div className={styles.main}>
+  <div className={styles.placearea}>
+    <Places cityname='Shanghai'/>
+    <Places cityname='Barcelona'/>
+    <Places cityname='Anterwerpen'/>
+    <Places cityname='Barcelona'/>
+    <Places cityname='Paris'/>
+    <Places cityname='Rome'/>
+  </div>
+  <div className={styles.globe}> 
   <Canvas flat linear>
   <ambientLight />
     <pointLight position={[10, 10, 10]} />
     <Box position={[-1.2,0, 0]} />
     <Box position={[1.2, 0, 0]} />
   </Canvas>
+  </div>
 </div>
 </Layout>
 

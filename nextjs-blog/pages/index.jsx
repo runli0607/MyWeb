@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Date from '../components/date';
 import { getSortedPostsData } from '../lib/posts';
-import { GetStaticProps, GetStaticPaths, GetServerSideProps } from 'next';
+import styles from '../styles/Home.module.css';
 
 export async function getStaticProps(){
   const allPostsData = getSortedPostsData();
@@ -23,8 +23,17 @@ export async function getMusic() {
 }
 export default function Home({allPostsData}) {
   return (
+    <>
+         <div className={styles.beach}>
+      <Image
+            priority
+            src="/images/beach.jpg"
+            height={1500}
+            width={1500}
+            alt="beach"
+            />
+          </div>
     <Layout home>
-      
       <section className={utilStyles.headingMd}>
         <p>Hi! This is Run Li</p>
       </section>
@@ -43,5 +52,6 @@ export default function Home({allPostsData}) {
         </ul>
       </section>
     </Layout>
+          </>
   );
 }

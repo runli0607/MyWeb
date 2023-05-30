@@ -1,13 +1,16 @@
-.about {
+.lists {
     color: blue;
-    margin-left: 30px;
+    margin-left: 1rem;
+
 }
 
-.about > li::marker{
+.lists > li::marker{
     color: blueviolet;
-    font-size: 30px;
 }
 
 .main {
+    max-width: 60rem;
+    padding: 1rem 0rem;
+    margin: 3rem auto 6rem;
     display: flex;
 }
