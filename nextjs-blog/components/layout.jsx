@@ -12,7 +12,6 @@ export const siteTitle = 'Run Li\'s';
 function MomentsLayout(){
   return (
     <>
-    <style>{'html,body { background-color: black; }'}</style>
     </>
   )
 }
@@ -31,40 +30,25 @@ function MyFooter(props){
       </footer>
   )
 }
-export default function Layout({ children, home, about, posts,moments}) {
+export default function Layout({ children,food, home, about, posts,moments}) {
   return (
-    <div>
-      {home && (
-        <>
-      <NavBar page='home'/>
-        </>
-      )}
-      {moments && (
-        <>
-      <NavBar page='moments'/>
-      <MomentsLayout />
-        </>
-      )}
-      {about && (
-        <>
-      <NavBar page='about'/>
-      <AboutLayout />
-        </>
-      )}
-      {posts && (
-        <>
-      <NavBar page='posts'/>
-      <AboutLayout />
-        </>
-      )}
       <div className={styles.container}>
-      <main>{children}</main>
-      {!(home||moments) && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )}
-    </div>
+        {home && (
+        <NavBar page='home'/>
+        )}
+      {food && (
+        <NavBar page='food'/>
+        )}
+      {moments && (
+        <NavBar page='moments'/>
+        )}
+      {about && (
+        <NavBar page='about'/>
+        )}
+      {posts && (
+        <NavBar page='posts'/>
+        )}
+      {children}
       {!moments && (
       <MyFooter footer={styles.footer}/>
       )}

@@ -1,0 +1,26 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    overflow-x: auto;
+    padding-top: auto;
+}
+
+.item{
+    width: 330px;
+    flex: 1 0 auto;         /* ADD */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+.item > img{
+    width:100%;
+    transition: 1.5s;
+}
+
+/* .item > img:hover{
+    transition: 1.5s;
+    scale: 1.6;
+} */

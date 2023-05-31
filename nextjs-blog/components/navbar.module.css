@@ -1,31 +1,35 @@
 .navbar {
-    top: 0px;
+    position:sticky;
+    height: fit-content;
+    top:0px;
     width: 100%;
     display: inline-flex;
-    position:fixed;
     justify-content:space-between;
+    transition: 0.8s;
     z-index: 2;
-    transition: 0.8s;
   }
+
   .changecolor{
-    transition: 0.8s;
-    top: 0px;
+    position:sticky;
+    height: fit-content;
+    top:0px;
     width: 100%;
     display: inline-flex;
-    position:fixed;
     justify-content:space-between;
+    transition: 0.8s;
     z-index: 2;
     background-color: aliceblue;
   }
 
   .momentschangecolor{
-    transition: 0.8s;
-    top: 0px;
+    max-width: 100vw;
+    position:sticky;
     width: 100%;
     display: inline-flex;
-    position:fixed;
     justify-content:space-between;
     z-index: 2;
+    top:0px;
+    transition: 0.8s;
     background-color: black;
   }
   
@@ -48,7 +52,7 @@
 
   
   .nav-logo {
-    width: fit-content;
+    min-width: max-content;
     margin-top:15px;
     margin-left:15px;
   }

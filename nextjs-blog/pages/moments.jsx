@@ -4,6 +4,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import Layout from "../components/layout"
 import styles from '../styles/Moments.module.css'
 import Places from '../components/Places.jsx'
+import data from '../public/moments/data.js'
 
 function Box(props) {
   // This reference will give us direct access to the mesh
@@ -12,7 +13,7 @@ function Box(props) {
   const [hovered, setHover] = useState(false)
   const [active, setActive] = useState(false)
   // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => (mesh.current.rotation.x += delta))
+  useFrame((active, delta) => (mesh.current.rotation.x += delta))
   // Return view, these are regular three.js elements expressed in JSX
   return (
     <mesh
@@ -22,30 +23,31 @@ function Box(props) {
       onClick={(event) => setActive(!active)}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
-      <boxGeometry args={[2, 2, 2]} />
-      <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+      <sphereBufferGeometry args={[2, 30, 30]} attach="geometry" />
+    <meshBasicMaterial color={0xfff1ef} attach='materials' />
+      <meshStandardMaterial color={hovered ? 'hotpink' : 'blue'} />
     </mesh>
   )
 }
 
 export default function moments(){
+  const dataset = data.map(item => 
+    <Places
+      {...item}
+      />
+  )
 return(
 <Layout moments>
 <div className={styles.main}>
+<style>{'html,body { background-color: black; }'}</style>
   <div className={styles.placearea}>
-    <Places cityname='Shanghai'/>
-    <Places cityname='Barcelona'/>
-    <Places cityname='Anterwerpen'/>
-    <Places cityname='Barcelona'/>
-    <Places cityname='Paris'/>
-    <Places cityname='Rome'/>
+   {dataset}
   </div>
   <div className={styles.globe}> 
   <Canvas flat linear>
   <ambientLight />
     <pointLight position={[10, 10, 10]} />
-    <Box position={[-1.2,0, 0]} />
-    <Box position={[1.2, 0, 0]} />
+    <Box position={[0, 0, 0]} />
   </Canvas>
   </div>
 </div>

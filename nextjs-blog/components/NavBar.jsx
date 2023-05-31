@@ -12,7 +12,9 @@ function ChooseEmoji(whichpage){
   return <h1 className={styles["emoji"]}>🥸</h1>
   }else if (whichpage.page=='posts'){
     return <h1 className={styles["emoji"]}>📨</h1>
-    }
+  }else if (whichpage.page=='food'){
+    return <h1 className={styles["emoji"]}>🍱</h1>
+  }
 }
 
 function NavBarColor(pages,scroll){
@@ -52,7 +54,7 @@ export default function NavBar(pages){
         </Link>
         <ul className={styles["nav-item"]} style={ pages.page=='moments' ? {'color':"white"} : {}}>
           <li>Music</li>
-          <li>Food</li>
+          <li><Link href="/food">Food</Link></li>
           <li><Link href="/moments">Moments</Link></li>
           <li><Link href="/about">About</Link></li>
           <li>Hire me!</li>

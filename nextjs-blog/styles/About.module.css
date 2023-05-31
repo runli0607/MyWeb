@@ -9,8 +9,7 @@
 }
 
 .main {
-    max-width: 60rem;
+    display: flex;
     padding: 1rem 0rem;
     margin: 3rem auto 6rem;
-    display: flex;
 }

@@ -4,14 +4,13 @@ import styles from '../styles/About.module.css';
 
 function Parag(){
     return(
-        <div className={styles.main}>
+    <div className={styles.main}>
         <div>
-
-         <Image src="/images/space.JPG"
-              width={2000}
-              height={2000}
-              />
-              </div>
+             <Image src="/images/space.JPG"
+                    width={2500}
+                    height={2000}
+            />
+        </div>
         <div>
         <p>Hi this is me </p>
         <p>I am Run Li, which is actually 李润, I am a graduate from the 
@@ -28,7 +27,8 @@ function Parag(){
             <li>Jmeter</li>
         </ul>
         </div>
-        </div>
+
+    </div>
     )
 }
 
@@ -36,9 +36,7 @@ function Parag(){
 export default function About(){
     return (
         <Layout about>
-        <div className={styles.about}>
             <Parag />
-        </div>
         </Layout>
     )
 }

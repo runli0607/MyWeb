@@ -1,6 +1,10 @@
 .container {
-  padding: 5rem 0rem 1rem 0rem;
-  }
+  /* padding: 5rem 0rem 0rem 0rem; */
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
   
 
 
@@ -12,21 +16,19 @@
 
 
 .footer {
-  position:relative;
-  bottom:0px;
   width: 100%;
   background-color: gray;  
   color: white;  
   text-align: left; 
+  text-indent: 20px;
 }
 
 .momentsfooter {
-  position:relative;
-  bottom:0px;
   width: 100%;
   background-color: black;  
   color: white;  
   text-align: left; 
+  text-indent: 20px;
 }
 
 .rightPart {

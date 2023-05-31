@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Date from '../components/date';
 import { getSortedPostsData } from '../lib/posts';
 import styles from '../styles/Home.module.css';
+import Footer from '../components/Footer'
 
 export async function getStaticProps(){
   const allPostsData = getSortedPostsData();
@@ -22,8 +23,11 @@ export async function getMusic() {
   return res.json();
 }
 export default function Home({allPostsData}) {
+  console.log(allPostsData)
+
   return (
     <>
+    <Layout home>
          <div className={styles.beach}>
       <Image
             priority
@@ -33,7 +37,6 @@ export default function Home({allPostsData}) {
             alt="beach"
             />
           </div>
-    <Layout home>
       <section className={utilStyles.headingMd}>
         <p>Hi! This is Run Li</p>
       </section>
