@@ -4,51 +4,56 @@ import React, { useState, useEffect } from "react"
 
 
 function ChooseEmoji(whichpage){
-  if (whichpage.page=='home') {
-   return <h1 className={styles["emoji"]}>🏖️</h1>
-  }else if (whichpage.page=='moments'){
-  return <h1 className={styles["emoji"]}>🌍</h1>
-  }else if (whichpage.page=='about'){
-  return <h1 className={styles["emoji"]}>🥸</h1>
-  }else if (whichpage.page=='posts'){
-    return <h1 className={styles["emoji"]}>📨</h1>
-  }else if (whichpage.page=='food'){
-    return <h1 className={styles["emoji"]}>🍱</h1>
+  switch (whichpage.page) {
+    case 'home':
+      return <h1 className={styles["emoji"]}>🏖️</h1>
+    
+    case 'moments':
+      return <h1 className={styles["emoji"]}>🌍</h1>
+   
+    case 'about':
+      return <h1 className={styles["emoji"]}>🥸</h1>    
+  
+    case 'posts':
+      return <h1 className={styles["emoji"]}>📨</h1>     
+    
+    case 'food':
+      return <h1 className={styles["emoji"]}>🍱</h1> 
+
+    case 'hire':
+      return <h1 className={styles["emoji"]}>🪧</h1>
+    
+    case 'music':
+      return <h1 className={`${styles["emoji"]}`}>🎶</h1>
   }
 }
 
-function NavBarColor(pages,scroll){
-  if (pages.page=='moments'){
-    if (scroll){
-      return styles['momentschangecolor']
-    }else{
-      return styles['navbar']
-    }
-  }else{
-    if(scroll){
-      return styles['changecolor']
-    }else{
-      return styles['navbar']
-    }
-  }
-}
+function navBarColor(pages,scroll){
+  switch (pages.page) {
+    case 'moments':
+      return scroll ? styles.moments : undefined
+    default:
+      return scroll ? styles.changecolor : undefined
+    
+  }}
 
-export default function NavBar(pages){
+  export default function NavBar(pages){
   const [scroll, setScroll] = useState(false)
   function changeBackground() {
-    if (window.scrollY >= 66) {
-      setScroll(true)
-    } else {
+    if (window.scrollY <= 70) {
+      // console.log(1)
       setScroll(false)
+    } else {
+      setScroll(true)
     }
   }
   useEffect(() => {
     changeBackground()
-    // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground)
-  })
+    // adding the event when scroll change background
+  },[])
     return(
-      <nav className={NavBarColor(pages,scroll)}>
+      <nav className={navBarColor(pages,scroll)}>
         <Link href="/" >
         <h1 className={styles["nav-logo"]} style={ pages.page=='moments' ? {'color':"white"} : {}}>Run润</h1>
         </Link>
@@ -57,7 +62,7 @@ export default function NavBar(pages){
           <li><Link href="/food">Food</Link></li>
           <li><Link href="/moments">Moments</Link></li>
           <li><Link href="/about">About</Link></li>
-          <li>Hire me!</li>
+          <li><Link href="/hire">Hire me!</Link></li>
         </ul>
           <ChooseEmoji page={pages.page}/>
       </nav>

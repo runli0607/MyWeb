@@ -1,12 +1,10 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
-import Image from 'next/image';
 import Link from 'next/link';
 import Date from '../components/date';
 import { getSortedPostsData } from '../lib/posts';
 import styles from '../styles/Home.module.css';
-import Footer from '../components/Footer'
 
 export async function getStaticProps(){
   const allPostsData = getSortedPostsData();
@@ -27,19 +25,21 @@ export default function Home({allPostsData}) {
 
   return (
     <>
-    <Layout home>
+    <Layout page='home'>
          <div className={styles.beach}>
-      <Image
-            priority
-            src="/images/beach.jpg"
-            height={1500}
-            width={1500}
-            alt="beach"
-            />
+           <div className={styles.intro}> 
+              <h1>Hi,</h1>
+               <p >This is Run Li, a graduate from University of Warwick, currently 
+                studying React and looking for opportunity to become a front end developer!
+              </p>
+           </div> 
+           <div className={styles.intro}> 
+              <h1>Hi,</h1>
+               <p >This is Run Li, a graduate from University of Warwick, currently 
+                studying React and looking for opportunity to become a front end developer!
+              </p>
+           </div>     
           </div>
-      <section className={utilStyles.headingMd}>
-        <p>Hi! This is Run Li</p>
-      </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>

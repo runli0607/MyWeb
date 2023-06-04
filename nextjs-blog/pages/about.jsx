@@ -35,7 +35,7 @@ function Parag(){
 
 export default function About(){
     return (
-        <Layout about>
+        <Layout page='about'>
             <Parag />
         </Layout>
     )

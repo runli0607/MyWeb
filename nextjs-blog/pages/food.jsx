@@ -11,7 +11,7 @@ export default function Food(){
         />
         )
     return (
-        <Layout food>
+        <Layout page='food'>
         <div className={styles.main}>
             {dataset}
         </div>

@@ -90,7 +90,25 @@
   }
 }
 
-.beach > img {
-  margin-top: -294.5px;
-  width: 100%;
+.beach  {
+  margin-top: -5%;
+  height: 900px;
+  background-image: url("../public/images/beach.JPG");
+  background-position: center;
+  background-size:100%;
+  background-repeat: no-repeat;
+  display: flex;
+  color: #eaeaea;
+  justify-content: space-around;
+  
+}
+
+.intro {
+  align-self:center;
+  border-radius: 10px;
+  width: 700px;
+  height: 200px;
+  background-color: rgba(240, 255, 255, 0.6);
+  justify-content: space-between;
+  color: #0070f3;
 }

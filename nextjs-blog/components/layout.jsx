@@ -7,54 +7,20 @@ import NavBar from './NavBar.jsx';
 const name = '李润';
 export const siteTitle = 'Run Li\'s';
 
-
-
-function MomentsLayout(){
-  return (
-    <>
-    </>
-  )
-}
-function AboutLayout(){
-  return (
-    <>
-        
-      </>
-  )
-}
-
 function MyFooter(props){
+  const footerStyle = props.page == 'moments' ? styles.momentsfooter : styles.footer
   return(
-    <footer className={props.footer}>
+    <footer className={footerStyle}>
         <small>copyright @ Run Li 李润</small>
       </footer>
   )
 }
-export default function Layout({ children,food, home, about, posts,moments}) {
+export default function Layout(props) {
   return (
-      <div className={styles.container}>
-        {home && (
-        <NavBar page='home'/>
-        )}
-      {food && (
-        <NavBar page='food'/>
-        )}
-      {moments && (
-        <NavBar page='moments'/>
-        )}
-      {about && (
-        <NavBar page='about'/>
-        )}
-      {posts && (
-        <NavBar page='posts'/>
-        )}
-      {children}
-      {!moments && (
-      <MyFooter footer={styles.footer}/>
-      )}
-      {moments && (
-      <MyFooter footer={styles.momentsfooter}/>
-      )}
+    <div className={styles.container}>
+      <NavBar page={props.page}/>
+       {props.children}
+      <MyFooter page={props.page}/>
     </div>
   );
 }
