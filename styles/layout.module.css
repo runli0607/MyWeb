@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-template-rows: auto 1fr auto; 
+  min-height: 100vh;
+}
+  
+
+
+.backToHome {
+  max-width: 60rem;
+    margin: 3rem 0 0;
+  }
+
+
+
+.footer {
+  width: 100%;
+  background-color: gray;  
+  color: white;  
+  text-align: left; 
+  text-indent: 20px;
+}
+
+.momentsfooter {
+  width: 100%;
+  background-color: black;  
+  color: white;  
+  text-align: left; 
+  text-indent: 20px;
+}
+
+.rightPart {
+  position: relative;
+  left: 100px;
+}

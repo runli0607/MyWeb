@@ -1,0 +1,15 @@
+.lists {
+    color: blue;
+    margin-left: 1rem;
+
+}
+
+.lists > li::marker{
+    color: blueviolet;
+}
+
+.main {
+    display: grid;
+    padding: 1rem 0rem;
+    margin: 3rem auto 6rem;
+}

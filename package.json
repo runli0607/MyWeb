@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^8.13.0",
+    "date-fns": "^2.30.0",
+    "next": "latest",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-globe": "^2.0.1",
+    "react-router-dom": "^6.12.1",
+    "three": "^0.152.2"
+  },
+  "devDependencies": {
+    "@types/node": "20.2.5",
+    "@types/react": "18.2.7",
+    "typescript": "5.0.4"
+  }
+}

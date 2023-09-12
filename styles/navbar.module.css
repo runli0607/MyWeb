@@ -1,0 +1,75 @@
+
+.changecolor{
+background-color: aliceblue;
+transition: 0.8s;
+}
+
+.moments{
+background-color: black;
+transition: 0.8s;
+
+}
+.home{
+    background-position: center;
+  background-size:100%;
+  background-repeat: no-repeat;
+background-image: url("../public/images/beachnav.JPG");
+transition: 0.8s;
+}
+
+.changecolor:hover{
+border-bottom: 1px solid;
+box-shadow: 1px 2px 7px ;
+background-color: aliceblue;
+}
+
+.moments:hover{
+border-bottom: 1px solid;
+box-shadow: 1px 2px 7px ;
+background-color: black;
+}
+
+
+.nav-logo {
+    min-width: max-content;
+    margin-top:15px;
+    margin-left:15px;
+}
+
+
+.nav-item{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    /* background-color:#99c1fc; */
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.nav-item li{
+    font-weight: 100;
+    transition: 0.1s;
+    font-size: 22px;
+    /* color: aliceblue; */
+}
+
+.nav-item Link{
+    font-weight: 100;
+    transition: 0.1s;
+    font-size: 22px;
+}
+
+.momentscolor{
+    color:white;
+}
+
+.nav-item li:hover{
+transition: 0.1s;
+font-size: 30px;
+}
+
+
+.emoji{
+margin-right: 15px;
+font-size:250%;
+}
