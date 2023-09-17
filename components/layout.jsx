@@ -11,9 +11,13 @@ function MyFooter(props) {
     </footer>
   )
 }
+
+
+
 export default function Layout(props) {
+  const containerclass = `${styles["container"]} ${props.page == 'moments' ? styles["momentsbg"] : ''}`
   return (
-    <div className={styles.container}>
+    <div className={containerclass}>
       <NavBar page={props.page} />
       <React.Suspense fallback={<h2>Loading...</h2>}>
         {props.children}

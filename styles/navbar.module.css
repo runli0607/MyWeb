@@ -1,43 +1,45 @@
 
-.changecolor{
-background-color: aliceblue;
-transition: 0.8s;
+.changecolor {
+    background-color: aliceblue;
+    transition: 0.8s;
+}
+.changecolor:hover {
+    border-bottom: 1px solid;
+    box-shadow: 1px 2px 7px;
+    background-color: aliceblue;
 }
 
-.moments{
-background-color: black;
-transition: 0.8s;
-
+.moments {
+    background: black;
+    transition: 0.8s;
 }
-.home{
-    background-position: center;
-  background-size:100%;
-  background-repeat: no-repeat;
-background-image: url("../public/images/beachnav.JPG");
-transition: 0.8s;
+.moments:hover {
+    border-bottom: 1px solid ;
+    box-shadow: 1px 2px 7px;
+    background: black;
 }
 
-.changecolor:hover{
-border-bottom: 1px solid;
-box-shadow: 1px 2px 7px ;
-background-color: aliceblue;
-}
 
-.moments:hover{
-border-bottom: 1px solid;
-box-shadow: 1px 2px 7px ;
-background-color: black;
+.momentscolor {
+    color: rgb(220, 218, 218);
+    transition: 0.8s;
+}
+.momentscolor:hover{
+    background: rgb(0, 0, 0);
+    transition: 0.8s;
 }
 
 
 .nav-logo {
     min-width: max-content;
-    margin-top:15px;
-    margin-left:15px;
+    margin-top: 15px;
+    margin-left: 15px;
 }
 
 
-.nav-item{
+
+
+.nav-item {
     display: flex;
     list-style: none;
     align-items: center;
@@ -46,30 +48,28 @@ background-color: black;
     justify-content: space-evenly;
 }
 
-.nav-item li{
+.nav-item li {
     font-weight: 100;
     transition: 0.1s;
     font-size: 22px;
     /* color: aliceblue; */
 }
 
-.nav-item Link{
+.nav-item Link {
     font-weight: 100;
     transition: 0.1s;
     font-size: 22px;
 }
 
-.momentscolor{
-    color:white;
+
+
+.nav-item li:hover {
+    transition: 0.1s;
+    font-size: 30px;
 }
 
-.nav-item li:hover{
-transition: 0.1s;
-font-size: 30px;
-}
 
-
-.emoji{
-margin-right: 15px;
-font-size:250%;
+.emoji {
+    margin-right: 15px;
+    font-size: 250%;
 }

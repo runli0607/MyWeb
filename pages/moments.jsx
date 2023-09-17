@@ -39,7 +39,6 @@ export default function moments(){
 return(
 <Layout page='moments'>
 <div className={styles.main}>
-<style>{'html,body { background-color: black; }'}</style>
   <div className={styles.placearea}>
    {dataset}
   </div>
