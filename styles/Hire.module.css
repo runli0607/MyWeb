@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hireForm{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hireForm input{
+    margin: 10px;
+}
+
+.hireForm button{
+    background: wheat;
+    border: none;
+    border-radius: 10px;
+}

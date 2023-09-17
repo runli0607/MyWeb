@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import HiringForm from '../components/Form'
+import styles from '../styles/Hire.module.css'
 
 export default function Hire() {
     const [formData, setFormData] = React.useState({
@@ -62,12 +63,17 @@ export default function Hire() {
 
     return (
         <Layout page='hire'>
-            <HiringForm
-                formData={formData}
-                handleChange={handleChange}
-                handleSubmit={handleSubmit}
-                status={status}
-            />
+            <section className={styles.container}>
+            <h1>
+                Welcome, please enter your Company Name and you contact details
+            </h1>
+                <HiringForm
+                    formData={formData}
+                    handleChange={handleChange}
+                    handleSubmit={handleSubmit}
+                    status={status}
+                />
+            </section>
         </Layout>
     )
 }

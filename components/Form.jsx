@@ -4,8 +4,8 @@ import styles from '../styles/Hire.module.css'
 export default function Form(props){
 
     return(
-        <div className={styles['hire']}>
-            <form onSubmit={props.handleSubmit}>
+        <div className={styles.hireForm}>
+            <form onSubmit={props.handleSubmit} className={styles.hireForm}>
                 <input 
                     type="text" 
                     placeholder='Company'
