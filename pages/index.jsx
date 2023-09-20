@@ -29,6 +29,18 @@ export default function Home({ allPostsData }) {
             studying React and looking for opportunity to become a front end developer!
           </p>
         </div>
+        <div className={styles.intro} id={styles.hobby}>
+          <h1>Hi,</h1>
+          <p >This is Run Li, a graduate from University of Warwick, currently
+            studying React and looking for opportunity to become a front end developer!
+          </p>
+        </div>
+        <div className={styles.intro} id={styles.music}>
+          <h1>Hi,</h1>
+          <p >This is Run Li, a graduate from University of Warwick, currently
+            studying React and looking for opportunity to become a front end developer!
+          </p>
+        </div>
       </div>
     </Layout>
   );

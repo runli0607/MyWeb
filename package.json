@@ -13,7 +13,8 @@
     "react-dom": "18.2.0",
     "react-globe": "^2.0.1",
     "react-router-dom": "^6.12.1",
-    "three": "^0.152.2"
+    "three": "^0.152.2",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "20.2.5",

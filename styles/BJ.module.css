@@ -1,0 +1,66 @@
+.container{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
+    background-image: url("/images/table.png");
+    background-size: cover;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 10px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.container h1 {
+    color: goldenrod;
+}
+
+#message-el {
+    font-style: italic;
+}
+
+.container button {
+    color: #016f32;
+    width: 150px;
+    background: goldenrod;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+}
+
+#startBtn{
+    display: block;
+    margin: 2px auto;
+}
+
+.optionBtn button{
+    margin: 0px 2px;
+}
+
+.cardsbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.cards{
+    width: 70px;
+    border-radius: 1px;
+    box-shadow: 1px 1px 2px black;
+    margin: 3px;
+    animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in{
+    0%{
+        margin-top: -100%;
+    }
+    100%{
+        margin-top: 0%;
+    }
+}

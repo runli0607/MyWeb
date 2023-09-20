@@ -24,33 +24,33 @@ function Box(props) {
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}>
       <sphereBufferGeometry args={[2, 30, 30]} attach="geometry" />
-    <meshBasicMaterial color={0xfff1ef} attach='materials' />
+      <meshBasicMaterial color={0xfff1ef} attach='materials' />
       <meshStandardMaterial color={hovered ? 'hotpink' : 'blue'} />
     </mesh>
   )
 }
 
-export default function moments(){
-  const dataset = data.map(item => 
+export default function moments() {
+  const dataset = data.map(item =>
     <Places
       {...item}
-      />
+    />
   )
-return(
-<Layout page='moments'>
-<div className={styles.main}>
-  <div className={styles.placearea}>
-   {dataset}
-  </div>
-  <div className={styles.globe}> 
-  <Canvas flat linear>
-  <ambientLight />
-    <pointLight position={[10, 10, 10]} />
-    <Box position={[0, 0, 0]} />
-  </Canvas>
-  </div>
-</div>
-</Layout>
+  return (
+    <Layout page='moments'>
+      <div className={styles.main}>
+        <div className={styles.placearea}>
+          {dataset}
+        </div>
+        <div className={styles.globe}>
+          <Canvas flat linear>
+            <ambientLight />
+            <pointLight position={[10, 10, 10]} />
+            <Box position={[0, 0, 0]} />
+          </Canvas>
+        </div>
+      </div>
+    </Layout>
 
-)
+  )
 }

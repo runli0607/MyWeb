@@ -28,8 +28,8 @@ function ChooseEmoji(whichpage) {
   }
 }
 function underLine(pages, page) {
-  if (pages.page == page) {
-    return { "text-decoration": "underline", "text-decoration-thickness": "1px" }
+  if (pages.page === page) {
+    return { "textDecoration": "underline", "textDecorationThickness": "1px" }
   }
 }
 
