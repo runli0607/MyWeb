@@ -4,7 +4,7 @@ import styles from '../styles/Hire.module.css'
 export default function Form(props){
 
     return(
-        <div className={styles.hireForm}>
+        <div >
             <form onSubmit={props.handleSubmit} className={styles.hireForm}>
                 <input 
                     type="text" 

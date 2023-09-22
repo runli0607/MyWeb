@@ -18,6 +18,9 @@
     color: goldenrod;
 }
 
+.container h2{
+    color: rgb(214, 109, 136);
+}
 #message-el {
     font-style: italic;
 }
@@ -63,4 +66,16 @@
     100%{
         margin-top: 0%;
     }
+}
+
+.messageBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bjwin{
+    width: 100px;
+    height: 100px;
+    background-image: url("/cards/w.png");
+    background-size: cover;
 }

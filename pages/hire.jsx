@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
-import HiringForm from '../components/Form'
+import HiringForm from '../components/HiringForm'
 import styles from '../styles/Hire.module.css'
 
 export default function Hire() {

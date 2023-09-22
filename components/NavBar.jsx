@@ -54,8 +54,10 @@ export default function NavBar(pages) {
     }
   }
   useEffect(() => {
-    changeBackground()
     window.addEventListener("scroll", changeBackground)
+    return ()=>{
+      window.removeEventListener("scroll", changeBackground)
+    }
     // adding the event when scroll change background
   }, [])
   return (

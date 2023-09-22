@@ -14,9 +14,9 @@ function MyFooter(props) {
 
 
 export default function Layout(props) {
-  const containerclass = `${styles["container"]} ${props.page == 'moments' ? styles["momentsbg"] : ''}`
+  const container = `${styles["container"]} ${props.page == 'moments' ? styles["momentsbg"] : ''}`
   return (
-    <div className={containerclass}>
+    <div className={container}>
       <NavBar page={props.page} />
         {props.children}
       <MyFooter page={props.page} />

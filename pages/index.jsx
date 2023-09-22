@@ -17,7 +17,7 @@ export default function Home({ allPostsData }) {
       <div className={styles.container}>
         <div class={styles.card}>
           <img src='/images/avatar.jpg' id={styles.avatar}/>
-          <div>
+          <div className={styles.cardInfo}>
             <h3>Run Li</h3>
             <p>Frontend Developer</p>
             <h4>Shanghai, China</h4>
