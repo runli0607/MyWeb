@@ -7,21 +7,14 @@
 
 
 .container {
-  background-image: url("../public/images/beach.JPG");
-  background-size: cover;
-  min-height: 1200px;
-  margin-top: -10%;
-  color: #eaeaea;
-
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
 
 
 
 .card {
-  margin: 200px auto 0px 100px;
+  margin: 0px auto 0px 100px;
   width: 420px;
   height: 210px;
   padding: 20px;
@@ -97,7 +90,7 @@
   border-radius: 10px;
   width: 500px;
   height: 250px;
-  background: linear-gradient(rgba(127, 148, 213, 0.8),rgba(160, 225, 146, 0.8));
+  background: linear-gradient(rgba(89,151,202, 1)30%,rgba(140,185,224, 1));
   color: whitesmoke;
 }
 
@@ -108,13 +101,13 @@
 
 #hobby{
   margin: 30px auto 0px 80px;
-  background: linear-gradient(rgba(160, 225, 146, 0.8),rgba(184, 56, 56, 0.8));
+  background: linear-gradient(rgba(147,168,180, 1) 30%,rgba(236,189,113, 1));
   box-shadow: -5px 5px 5px black;
 }
 
 #music{
   color: whitesmoke;
   margin: 30px auto 0px 200px;
-  background: rgb(118, 87, 40, 0.8) ;
+  background: rgb(254, 204, 118) ;
   box-shadow: -5px 5px 5px black;
 }

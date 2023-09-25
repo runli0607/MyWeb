@@ -3,10 +3,14 @@ import React, { useState, useEffect } from "react"
 import { v4 as uuidv4 } from 'uuid';
 
 export default function BlackJack() {
-    const [player, setPlayer] = useState({
-        name: "Run",
-        chips: 30
-    })
+    const [player, setPlayer] = useState(
+        JSON.parse(localStorage.getItem("Player"))
+        ||
+        {
+            name: "Run",
+            chips: 30
+        }
+    )
     const [fullDeck, setFullDeck] = useState(deckOfCards);
     const [message, setMessage] = useState('');
     const [hasBlackJack, setHasBlackJack] = useState(false);
@@ -346,6 +350,7 @@ export default function BlackJack() {
     }, [cards]);
 
     useEffect(() => {
+        localStorage.setItem("Player", JSON.stringify(player))
         console.log(isAlive)
     }, [isAlive]);
 

@@ -5,6 +5,10 @@
   min-height: 100vh;
   
 }
+.homebg{
+  background-image: url("../public/images/beach.JPG");
+  background-size: cover;
+}
 .momentsbg{
   background-image: url("../public/images/momentsbg.jpg");
   background-size: cover;
@@ -22,7 +26,7 @@
   width: 100%;
   background-color: gray;  
   color: white;  
-  text-align: center; 
+  text-align: left; 
   text-indent: 20px;
 }
 

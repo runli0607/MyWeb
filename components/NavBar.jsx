@@ -3,8 +3,8 @@ import Link from 'next/link';
 import React, { useState, useEffect } from "react"
 
 
-function ChooseEmoji(whichpage) {
-  switch (whichpage.page) {
+function ChooseEmoji({ activepage }) {
+  switch (activepage) {
     case 'home':
       return <h1 className={styles["emoji"]}>🏖️</h1>
 
@@ -27,53 +27,63 @@ function ChooseEmoji(whichpage) {
       return <h1 className={`${styles["emoji"]}`}>💼</h1>
   }
 }
-function underLine(pages, page) {
-  if (pages.page === page) {
+function underLine(page, activepage) {
+  if (page === activepage) {
     return { "textDecoration": "underline", "textDecorationThickness": "1px" }
   }
 }
 
-function navBarColor(pages, scroll) {
-  switch (pages.page) {
+function navBarColor(page, scroll) {
+  switch (page) {
     case 'moments':
-      return scroll ? styles.moments : undefined
+      return `${styles['momentsContainer']} ${scroll ? styles['momentsContainerScroll'] : ''}`
     default:
-      return scroll ? styles.changecolor : undefined
+      return `${styles['mainContainer']} ${scroll ? styles['mainContainerScroll'] : ''}`
 
   }
 }
 
-export default function NavBar(pages) {
+export default function NavBar({ page }) {
   const [scroll, setScroll] = useState(false)
+
   function changeBackground() {
-    if (window.scrollY <= 70) {
-      // console.log(1)
-      setScroll(false)
-    } else {
+    console.log(window.scrollY)
+    if (window.scrollY > 80) {
       setScroll(true)
+    } else {
+      setScroll(false)
     }
   }
+
+
   useEffect(() => {
-    window.addEventListener("scroll", changeBackground)
-    return ()=>{
+    window.addEventListener("scroll", changeBackground, { passive: true })
+    return () => {
       window.removeEventListener("scroll", changeBackground)
     }
     // adding the event when scroll change background
   }, [])
+
   return (
-    <nav className={navBarColor(pages, scroll)}>
-      <Link href="/" >
-        <h1 className={styles["nav-logo"]} style={pages.page == 'moments' ? { 'color': "white" } : {}}>Run润</h1>
-      </Link>
-      <ul className={`${styles["nav-item"]} ${pages.page == 'moments' ? styles["momentscolor"] : ''}`}>
+    <div className={styles.container}>
+
+    <nav className={navBarColor(page, scroll)}>
+
+      <h1 className={`${styles["nav-logo"]} ${scroll ? '' : styles['nav-logo-large']}`}>
+        <Link href="/" >
+          Run润
+        </Link>
+      </h1>
+      <ul className={`${styles["nav-item"]}`}>
         <li>Music</li>
-        <li style={underLine(pages, 'projects')}><Link href="/projects">Projects</Link></li>
-        <li style={underLine(pages, 'food')}><Link href="/food">Food</Link></li>
-        <li style={underLine(pages, 'moments')}><Link href="/moments">Moments</Link></li>
-        <li style={underLine(pages, 'about')}><Link href="/about">About</Link></li>
-        <li style={underLine(pages, 'hire')}><Link href="/hire">Hire me!</Link></li>
+        <li style={underLine(page, 'projects')}><Link href="/projects">Projects</Link></li>
+        <li style={underLine(page, 'food')}><Link href="/food">Food</Link></li>
+        <li style={underLine(page, 'moments')}><Link href="/moments">Moments</Link></li>
+        <li style={underLine(page, 'about')}><Link href="/about">About</Link></li>
+        <li style={underLine(page, 'hire')}><Link href="/hire">Hire me!</Link></li>
       </ul>
-      <ChooseEmoji page={pages.page} />
+      <ChooseEmoji activepage={page} />
     </nav>
+    </div>
   )
 }

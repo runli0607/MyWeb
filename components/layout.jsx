@@ -14,7 +14,9 @@ function MyFooter(props) {
 
 
 export default function Layout(props) {
-  const container = `${styles["container"]} ${props.page == 'moments' ? styles["momentsbg"] : ''}`
+  const container = `${styles["container"]} 
+  ${props.page === 'home' ? styles['homebg'] : '' }
+  ${props.page === 'moments' ? styles["momentsbg"] : ''}`
   return (
     <div className={container}>
       <NavBar page={props.page} />

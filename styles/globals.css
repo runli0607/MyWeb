@@ -43,21 +43,6 @@ button {
   font-weight: bold;
 }
 
-nav {
-  position:sticky;
-  height: fit-content;
-  top:0px;
-  display: inline-flex;
-  justify-content:space-between;
-  z-index: 2;
-  transition: 0.3s;
-  
-}
-nav:hover{
-  /* border-bottom: 1px solid; */
-  box-shadow: 1px 2px 7px ;
-  transition: 0.3s;
-  }
 
 @media (max-width: 600px) {
   .nav {
