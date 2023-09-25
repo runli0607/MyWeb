@@ -64,6 +64,10 @@ export default function NavBar({ page }) {
     // adding the event when scroll change background
   }, [])
 
+useEffect(() => {
+  changeBackground()
+}, []);
+
   return (
     <div className={styles.container}>
 

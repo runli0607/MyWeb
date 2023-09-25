@@ -2,15 +2,12 @@ import styles from "../styles/BJ.module.css"
 import React, { useState, useEffect } from "react"
 import { v4 as uuidv4 } from 'uuid';
 
+
 export default function BlackJack() {
-    const [player, setPlayer] = useState(
-        JSON.parse(localStorage.getItem("Player"))
-        ||
-        {
-            name: "Run",
-            chips: 30
-        }
-    )
+    const [player, setPlayer] = useState({
+        name: 'Run Li',
+        chips: 30
+    })
     const [fullDeck, setFullDeck] = useState(deckOfCards);
     const [message, setMessage] = useState('');
     const [hasBlackJack, setHasBlackJack] = useState(false);
@@ -82,6 +79,7 @@ export default function BlackJack() {
                 }
             })
         }
+
         setConclude(false)
         setIsAlive(true)
         setHasBlackJack(false)
@@ -350,14 +348,18 @@ export default function BlackJack() {
     }, [cards]);
 
     useEffect(() => {
+        setMessage('Want to play a round?')
+    }, []);
+
+    useEffect(() => {
+        localStorage.getItem("Player") &&
+            setPlayer(JSON.parse(localStorage.getItem("Player")))
+    }, []);
+
+    useEffect(() => {
         localStorage.setItem("Player", JSON.stringify(player))
         console.log(isAlive)
     }, [isAlive]);
-
-
-    useEffect(() => {
-        setMessage('Want to play a round?')
-    }, []);
 
 
     return (
@@ -438,7 +440,7 @@ export default function BlackJack() {
                         ''
                 }
             </div>
-            <p id="player-el">$: {player.chips}</p>
+            <h3 id="player-el">$: {player.chips}</h3>
         </div>
     )
 }
