@@ -64,30 +64,37 @@ export default function NavBar({ page }) {
     // adding the event when scroll change background
   }, [])
 
-useEffect(() => {
-  changeBackground()
-}, []);
+  useEffect(() => {
+    changeBackground()
+  }, []);
 
   return (
     <div className={styles.container}>
-
-    <nav className={navBarColor(page, scroll)}>
-
-      <h1 className={`${styles["nav-logo"]} ${scroll ? '' : styles['nav-logo-large']}`}>
+      <nav className={navBarColor(page, scroll)}>
         <Link href="/" >
-          Run润
+          <div className={`${styles["nav-icon"]} ${scroll ? '' : styles['nav-icon-large']}`}>
+            {
+              page==='moments'
+              ?
+              <img src="/favicon_io/ryaniconmoments.png" alt="icon" />
+              :
+              <img src="/favicon_io/ryanicon.png" alt="icon" />
+              }
+            <h1 >
+              Run润
+            </h1>
+          </div>
         </Link>
-      </h1>
-      <ul className={`${styles["nav-item"]}`}>
-        <li>Music</li>
-        <li style={underLine(page, 'projects')}><Link href="/projects">Projects</Link></li>
-        <li style={underLine(page, 'food')}><Link href="/food">Food</Link></li>
-        <li style={underLine(page, 'moments')}><Link href="/moments">Moments</Link></li>
-        <li style={underLine(page, 'about')}><Link href="/about">About</Link></li>
-        <li style={underLine(page, 'hire')}><Link href="/hire">Hire me!</Link></li>
-      </ul>
-      <ChooseEmoji activepage={page} />
-    </nav>
+        <ul className={`${styles["nav-item"]}`}>
+          <li>Music</li>
+          <li style={underLine(page, 'projects')}><Link href="/projects">Projects</Link></li>
+          <li style={underLine(page, 'food')}><Link href="/food">Food</Link></li>
+          <li style={underLine(page, 'moments')}><Link href="/moments">Moments</Link></li>
+          <li style={underLine(page, 'about')}><Link href="/about">About</Link></li>
+          <li style={underLine(page, 'hire')}><Link href="/hire">Hire me!</Link></li>
+        </ul>
+        <ChooseEmoji activepage={page} />
+      </nav>
     </div>
   )
 }

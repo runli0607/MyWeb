@@ -1,15 +1,17 @@
 .container {
   display: grid;
-  grid-template-columns: 1fr; 
-  grid-template-rows: auto 1fr auto; 
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  
+  user-select: none;
 }
-.homebg{
+
+.homebg {
   background-image: url("../public/images/beach.JPG");
   background-size: cover;
 }
-.momentsbg{
+
+.momentsbg {
   background-image: url("../public/images/momentsbg.jpg");
   background-size: cover;
 }
@@ -17,25 +19,22 @@
 
 .backToHome {
   max-width: 60rem;
-    margin: 3rem 0 0;
-  }
+  margin: 3rem 0 0;
+}
 
 
 
 .footer {
   width: 100%;
-  background-color: gray;  
-  color: white;  
-  text-align: left; 
-  text-indent: 20px;
+  padding: 10px;
+  background: rgb(240, 249, 255);
+  color: black;
+  text-align: center;
 }
 
-.momentsfooter {
-  width: 100%;
-  background-color: black;  
-  color: white;  
-  text-align: left; 
-  text-indent: 20px;
+.moments {
+  color:whitesmoke;
+  background-color: black;
 }
 
 .rightPart {

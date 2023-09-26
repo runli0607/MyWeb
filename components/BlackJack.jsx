@@ -351,6 +351,7 @@ export default function BlackJack() {
         setMessage('Want to play a round?')
     }, []);
 
+    
     useEffect(() => {
         localStorage.getItem("Player") &&
             setPlayer(JSON.parse(localStorage.getItem("Player")))
@@ -359,7 +360,8 @@ export default function BlackJack() {
     useEffect(() => {
         localStorage.setItem("Player", JSON.stringify(player))
         console.log(isAlive)
-    }, [isAlive]);
+    }, [player]);
+
 
 
     return (
