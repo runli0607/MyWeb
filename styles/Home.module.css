@@ -25,7 +25,7 @@
   background: #e9edc9;
   color: #2b2839;
   border-bottom: 6px solid #faedcd;
-  box-shadow: 5px 5px 5px;
+  box-shadow: 0 0 5px;
   animation-duration: 3s;
   transition: 2s;
   overflow:visible;
@@ -92,6 +92,7 @@
   height: 250px;
   background: linear-gradient(rgba(89,151,202, 1)30%,rgba(140,185,224, 1));
   color: whitesmoke;
+  box-shadow: 0 0 3px #2b2839;
 }
 
 .intro p,

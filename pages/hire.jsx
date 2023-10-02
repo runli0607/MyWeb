@@ -63,17 +63,23 @@ export default function Hire() {
 
     return (
         <Layout page='hire'>
-            <section className={styles.container}>
-            <h1>
-                Welcome, please enter your Company Name and you contact details
-            </h1>
-                <HiringForm
-                    formData={formData}
-                    handleChange={handleChange}
-                    handleSubmit={handleSubmit}
-                    status={status}
-                />
-            </section>
+            <main className={styles['main']}>
+                <section>
+                    <h1>
+                        Welcome, please enter your Company Name and you contact details
+                    </h1>
+                </section>
+
+                <section>
+                    <HiringForm
+                        formData={formData}
+                        handleChange={handleChange}
+                        handleSubmit={handleSubmit}
+                        status={status}
+                    />
+                </section>
+            
+            </main>
         </Layout>
     )
 }

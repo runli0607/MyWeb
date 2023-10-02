@@ -14,9 +14,9 @@ export default function Home({ allPostsData }) {
 
   return (
     <Layout page='home'>
-      <div className={styles.container}>
+      <main className={styles.container}>
         <div class={styles.card}>
-          <img src='/images/avatar.jpg' id={styles.avatar}/>
+            <img src='/images/avatar.jpg' id={styles.avatar} />
           <div className={styles.cardInfo}>
             <h3>Run Li</h3>
             <p>Frontend Developer</p>
@@ -41,7 +41,7 @@ export default function Home({ allPostsData }) {
             studying React and looking for opportunity to become a front end developer!
           </p>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 }

@@ -1,7 +1,8 @@
-.container{
+.main{
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: 100vh;
 }
 
 .hireForm{
@@ -22,4 +23,5 @@
     background: wheat;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
 }

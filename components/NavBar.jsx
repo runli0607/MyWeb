@@ -29,7 +29,10 @@ function ChooseEmoji({ activepage }) {
 }
 function underLine(page, activepage) {
   if (page === activepage) {
-    return { "textDecoration": "underline", "textDecorationThickness": "1px" }
+    return {
+      "textDecoration": "underline",
+      "textDecorationThickness": "2px"
+    }
   }
 }
 
@@ -69,17 +72,17 @@ export default function NavBar({ page }) {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <nav className={navBarColor(page, scroll)}>
         <Link href="/" >
           <div className={`${styles["nav-icon"]} ${scroll ? '' : styles['nav-icon-large']}`}>
             {
-              page==='moments'
-              ?
-              <img src="/favicon_io/ryaniconmoments.png" alt="icon" />
-              :
-              <img src="/favicon_io/ryanicon.png" alt="icon" />
-              }
+              page === 'moments'
+                ?
+                <img src="/favicon_io/ryaniconmoments.png" alt="icon" />
+                :
+                <img src="/favicon_io/ryanicon.png" alt="icon" />
+            }
             <h1 >
               Run润
             </h1>
@@ -95,6 +98,6 @@ export default function NavBar({ page }) {
         </ul>
         <ChooseEmoji activepage={page} />
       </nav>
-    </div>
+    </header>
   )
 }

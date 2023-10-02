@@ -48,4 +48,68 @@ export default [
         img:"../images/food/tart.JPG",
         alt:"sashimi in chisou"
     },
+    {
+        cityname:"Home",
+        date:"2023-05-12",
+        info:"Sashimi Omakase!",
+        img:"../images/food/tart.JPG",
+        alt:"sashimi in chisou"
+    },
+    {
+        cityname:"Home",
+        date:"2023-05-12",
+        info:"Sashimi Omakase!",
+        img:"../images/food/tart.JPG",
+        alt:"sashimi in chisou"
+    },
+    {
+        cityname:"Home",
+        date:"2023-05-12",
+        info:"Sashimi Omakase!",
+        img:"../images/food/tart.JPG",
+        alt:"sashimi in chisou"
+    },
+    {
+        cityname:"Home",
+        date:"2023-05-12",
+        info:"Sashimi Omakase!",
+        img:"../images/food/tart.JPG",
+        alt:"sashimi in chisou"
+    },
+    {
+        cityname:"Home",
+        date:"2023-05-12",
+        info:"Sashimi Omakase!",
+        img:"../images/food/tart.JPG",
+        alt:"sashimi in chisou"
+    },
+    {
+        cityname:"Home",
+        date:"2023-05-12",
+        info:"Sashimi Omakase!",
+        img:"../images/food/tart.JPG",
+        alt:"sashimi in chisou"
+    },
+    {
+        cityname:"Home",
+        date:"2023-05-12",
+        info:"Sashimi Omakase!",
+        img:"../images/food/tart.JPG",
+        alt:"sashimi in chisou"
+    },
+    {
+        cityname:"Home",
+        date:"2023-05-12",
+        info:"Sashimi Omakase!",
+        img:"../images/food/tart.JPG",
+        alt:"sashimi in chisou"
+    },
+    {
+        cityname:"Home",
+        date:"2023-05-12",
+        info:"Sashimi Omakase!",
+        img:"../images/food/tart.JPG",
+        alt:"sashimi in chisou"
+    },
+    
 ]

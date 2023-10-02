@@ -1,6 +1,54 @@
 .main{
+    padding: 0 45px;
+}
+
+
+.projects-container{
+    border: 1px dotted blue;
     display: flex;
-    flex-direction: column;
-    margin: auto;
-    padding: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-align: center;
+}
+
+.projectheading{
+    border-bottom: 1px solid saddlebrown;
+    padding: 10px;
+}
+
+.projectheading a{
+    display: inline-block;
+    padding: 10px 25px;
+    background: #b0c4b1;
+    border-radius: 5px;
+}
+
+.note,
+.van-life,
+.shopping-list{
+    flex-grow: 1;
+}
+
+.note{
+    width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    background: linear-gradient(0.25turn,#ccd5ae,#e9edc9);
+}
+
+.van-life{
+    width: 700px;
+    padding: 30px;
+    border-radius: 10px;
+    background: linear-gradient(#e9edc9,#fefae0);
+}
+
+
+.shopping-list{
+    border-radius: 10px;
+    padding: 30px;
+    background: linear-gradient(#fefae0,#faedcd);
+}
+.shopping-list img{
+    width: 300px;
 }

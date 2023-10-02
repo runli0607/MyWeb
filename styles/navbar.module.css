@@ -1,7 +1,7 @@
 .container {
     position: sticky;
     top: 0px;
-    height: 150px;
+    height: 120px;
     z-index: 3;
 }
 
@@ -28,7 +28,6 @@
 }
 
 .momentsContainer {
-    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -36,18 +35,10 @@
     color: aliceblue;
 }
 
+
 .momentsContainer:hover {
-    background: black;
-}
-
-
-.momentsContainerScroll {
-    padding: 0px;
-}
-
-.momentsContainerScroll:hover {
     padding: 10px 0px;
-
+    background: black;
 }
 
 .nav-icon {

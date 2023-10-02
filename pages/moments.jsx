@@ -38,18 +38,19 @@ export default function moments() {
   )
   return (
     <Layout page='moments'>
-      <div className={styles.main}>
-        <div className={styles.placearea}>
+      <main className={styles.main}>
+        <section className={styles.placeArea}>
           {dataset}
-        </div>
-        <div className={styles.globe}>
+        </section>
+
+        <section className={styles.globe}>
           <Canvas flat linear>
             <ambientLight />
             <pointLight position={[10, 10, 10]} />
             <Box position={[0, 0, 0]} />
           </Canvas>
-        </div>
-      </div>
+        </section>
+      </main>
     </Layout>
 
   )

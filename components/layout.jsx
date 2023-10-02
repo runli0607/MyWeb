@@ -6,7 +6,7 @@ function MyFooter(props) {
   const footerStyle = `${styles['footer']}  ${props.page === 'moments' ? styles['moments'] : ''}`
   return (
     <footer className={footerStyle}>
-      <small>copyright @ Run Li 李润</small>
+      <small>©️ 2023  Run Li 李润</small>
     </footer>
   )
 }

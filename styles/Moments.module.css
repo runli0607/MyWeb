@@ -1,36 +1,39 @@
 .main {
-    width: 100vw;
+    /* for moments page to be just 100 view height */
+    flex-grow: 1;
+    height: 500px;
+    border: 2px solid red;
+    padding: 0 50px;
+    /* for the content to be flex row direction */
     display: flex;
-    padding: 2rem;
-    height: 88vh;
+    justify-content: space-between;
 }
 
-.placearea {
-    width: 30vw;
-    overflow: auto;
-    padding: 10px;
-    background-color: white;
-    opacity: 0.7;
-    border-radius: 30px;
+.placeArea {
+    /* for the cards to places in colunm flex box */
     display: flex;
     flex-direction: column;
-    /* &::-webkit-scrollbar {
-        display: none;
-    } */
-}
-.placecard {
-    /* flex: 1 0 auto; */
-    width: 90%;
-    margin: 1rem 0rem;
-    height: 100px;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    padding: 13px;
-    background-color: white;
-    align-self:center ;
+    gap: 20px;
+    border: 2px solid red;
 
+    background: whitesmoke;
+    padding: 25px;
+    width: 30vw;
+    overflow: scroll;
+}
+
+.placeArea::-webkit-scrollbar {
+    display: none;
+}
+
+.placecard {
+    padding: 20px 0;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background: whitesmoke;
 }
 
 .globe {
-    width: 70vw;
+    flex-grow: 1;
+    border: 2px solid red;
 }
