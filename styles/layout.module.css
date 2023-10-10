@@ -1,5 +1,5 @@
 .container {
-  user-select: none;
+  user-select:auto;
 }
 
 .homebg {

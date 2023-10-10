@@ -1,9 +1,9 @@
 import Layout from "../components/layout"
-import Image from 'next/image';
 import styles from '../styles/Food.module.css';
 import FoodCard from '../components/FoodCard';
 import React, { useRef, useState,useEffect } from 'react'
 import data from '../public/food/data.js'
+import { v4 as uuidv4 } from 'uuid';
 
 export async function getStaticProps(){
     return{
@@ -28,6 +28,7 @@ export default function Food({ data }){
     
     const dataset = data.map(item =>
         <FoodCard 
+        key={uuidv4()}
         {...item}
         />
         )

@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import styles from '../styles/Moments.module.css'
 import Places from '../components/Places.jsx'
 import data from '../public/moments/data.js'
+import { v4 as uuidv4 } from 'uuid';
 
 function Box(props) {
   // This reference will give us direct access to the mesh
@@ -33,6 +34,7 @@ function Box(props) {
 export default function moments() {
   const dataset = data.map(item =>
     <Places
+    key={uuidv4()}
       {...item}
     />
   )

@@ -3,6 +3,8 @@
     top: 0px;
     height: 120px;
     z-index: 3;
+    user-select: none;
+    font-weight: lighter;
 }
 
 .mainContainer {
@@ -46,7 +48,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap:10px;
+    gap: 10px;
     transition: 0.5s;
 }
 
@@ -57,8 +59,8 @@
     transition: 1s;
 }
 
-.nav-icon img:hover{
-    transform:rotate(360deg);
+.nav-icon img:hover {
+    transform: rotate(360deg);
     transition: 1s;
 }
 
@@ -88,10 +90,10 @@
     width: 100%;
     justify-content: space-evenly;
     padding: 0px;
-
 }
 
 .nav-item li {
+    width: fit-content;
     font-weight: 100;
     transition: 0.1s;
     font-size: 22px;
@@ -101,7 +103,7 @@
 .nav-item li:hover {
     transition: 0.1s;
     scale: 1.3;
-    font-weight: normal;
+    font-weight: 500;
 }
 
 

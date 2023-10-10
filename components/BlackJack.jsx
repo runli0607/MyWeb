@@ -1,6 +1,6 @@
 import styles from "../styles/BJ.module.css"
 import React, { useState, useEffect } from "react"
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 
 export default function BlackJack() {
@@ -34,7 +34,7 @@ export default function BlackJack() {
         const number = ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king']
         for (let i = 0; i < suit.length; i++) {
             for (let j = 0; j < number.length; j++) {
-                cardList.push(
+                cardList.push( 
                     {
                         id: uuidv4(),
                         alt: `${number[j]} of ${suit[i]}`,
@@ -116,18 +116,17 @@ export default function BlackJack() {
     async function concludeGame() {
         setConclude(true)
         let dealersum = dealerSum
-        let dealercard = getRandomCard()
         let dealersumace = dealerSumAce
-        dealersum += dealercard.value
-        dealersumace = checkAceValue([...dealerCards, dealercard], 'dealer')
-        setDealerCards(prev => [...prev, dealercard])
-        setDealerSum(prev => prev + dealercard.value)
-        setDealerSumAce(checkAceValue([...dealerCards, dealercard], 'dealer'))
-        let dealerFinalCard = [...dealerCards, dealercard]
+        // let dealercard = getRandomCard()
+        // dealersum += dealercard.value
+        // dealersumace = checkAceValue([...dealerCards, dealercard], 'dealer')
+        // setDealerCards(prev => [...prev, dealercard])
+        // setDealerSum(prev => prev + dealercard.value)
+        // setDealerSumAce(checkAceValue([...dealerCards, dealercard], 'dealer'))
+        let dealerFinalCard = [...dealerCards]
         while (dealersum < 17 && dealersumace < 17) {
             console.log("dealer sum :" + dealersum)
             console.log("dealer sum with ace:" + dealersumace)
-            await delay(500)
             let card = getRandomCard()
             while (dealerFinalCard.includes(card)) {
                 console.log('randomcard is :' + card.alt + " current card includs: " + dealerFinalCard.map(a => a.alt))
@@ -140,6 +139,7 @@ export default function BlackJack() {
             dealersum += card.value
             dealersumace = checkAceValue(dealerFinalCard, 'dealer')
             setDealerSumAce(dealersumace)
+            await delay(500)
         }
         if (dealersumace) {
             console.log("dealer have ace")
@@ -348,13 +348,14 @@ export default function BlackJack() {
     }, [cards]);
 
     useEffect(() => {
-        setMessage('Want to play a round?')
-    }, []);
+        if(conclude)
+        setMessage("Dealer is cheating...")
+    }, [conclude]);
 
-    
     useEffect(() => {
+        setMessage('Want to play a round?')
         localStorage.getItem("Player") &&
-            setPlayer(JSON.parse(localStorage.getItem("Player")))
+        setPlayer(JSON.parse(localStorage.getItem("Player")))
     }, []);
 
     useEffect(() => {

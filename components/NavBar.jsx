@@ -4,28 +4,37 @@ import React, { useState, useEffect } from "react"
 
 
 function ChooseEmoji({ activepage }) {
+  let select = ''
   switch (activepage) {
     case 'home':
-      return <h1 className={styles["emoji"]}>🏖️</h1>
+      select = '🏖️'
+      break
 
-    case 'moments':
-      return <h1 className={styles["emoji"]}>🌍</h1>
-
-    case 'about':
-      return <h1 className={styles["emoji"]}>🥸</h1>
-
-    case 'posts':
-      return <h1 className={styles["emoji"]}>📨</h1>
-
-    case 'food':
-      return <h1 className={styles["emoji"]}>🍱</h1>
-
-    case 'hire':
-      return <h1 className={styles["emoji"]}>🪧</h1>
+    case 'xpress':
+      select = '🎙️'
+      break
 
     case 'projects':
-      return <h1 className={`${styles["emoji"]}`}>💼</h1>
+      select = '💼'
+      break
+
+    case 'food':
+      select = '🍱'
+      break
+
+    case 'moments':
+      select = '🌍'
+      break
+
+    case 'about':
+      select = '🥸'
+      break
+
+    case 'hire':
+      select = '🪧'
+      break
   }
+  return <h1 className={`${styles["emoji"]}`}>{`${select}`}</h1>
 }
 function underLine(page, activepage) {
   if (page === activepage) {
@@ -89,7 +98,7 @@ export default function NavBar({ page }) {
           </div>
         </Link>
         <ul className={`${styles["nav-item"]}`}>
-          <li>Music</li>
+          <li style={underLine(page, 'xpress')}><Link href="/xpress">Xpress</Link></li>
           <li style={underLine(page, 'projects')}><Link href="/projects">Projects</Link></li>
           <li style={underLine(page, 'food')}><Link href="/food">Food</Link></li>
           <li style={underLine(page, 'moments')}><Link href="/moments">Moments</Link></li>

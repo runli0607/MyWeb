@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../styles/Hire.module.css'
 
-export default function Form(props){
+export default function HiringForm(props){
 
     return(
         <div >
