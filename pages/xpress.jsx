@@ -20,7 +20,6 @@ function Content() {
     const [content, setContent] = useState('');
     const [posts, setPosts] = useState([]);
 
-
     posts.sort((a, b) => b.createdAt - a.createdAt)
     useEffect(() => {
         const unsubscribe = onSnapshot(postsCollection, (snapshot) => {
@@ -54,7 +53,7 @@ function Content() {
             createdAt: Date.now(),
             updatedAt: Date.now(),
             handle: "Run",
-            content: content.replace(/<br\s?\/?>/g,"\n"),
+            content: content.replace(/<br\s?\/?>/g, "\n"),
             likes: 0,
             comments: [],
             retweets: 0
@@ -64,18 +63,21 @@ function Content() {
 
     const allPosts = posts.map(post => {
         const date = new Date(post.createdAt)
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: "numeric" };
         const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
         return (
             <div className={styles['posts']} key={post.id}>
                 <div className={styles['posts-inner']}>
+                    <div className={styles['posts-left']}>
                     <img src='https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Prescription01&hairColor=Red&facialHairType=BeardMedium&facialHairColor=BrownDark&clotheType=GraphicShirt&clotheColor=Gray01&graphicType=Skull&eyeType=Side&eyebrowType=UpDownNatural&mouthType=Vomit&skinColor=Pale' />
+                    <p className={styles['posts-more']}>...</p>
+                    </div>
                     <div className={styles['posts-main']}>
                         <div className={styles['poster-info']}>
                             <p className={styles['handle']}>{post.handle}</p>
                             <p className={styles['time']}>{formattedDate}</p>
                         </div>
-                        <p>{post.content}</p>
+                        <p className={styles['content']}>{post.content}</p>
                         <div className={styles['posts-details']}>
                             <span className={styles['posts-detail']} >
                                 <i class="fa-regular fa-comment-dots"></i>
@@ -87,7 +89,6 @@ function Content() {
                             </span>
                         </div>
                     </div>
-
                 </div>
             </div>
         )

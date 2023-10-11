@@ -59,7 +59,6 @@ export default function NavBar({ page }) {
   const [scroll, setScroll] = useState(false)
 
   function changeBackground() {
-    console.log(window.scrollY)
     if (window.scrollY > 80) {
       setScroll(true)
     } else {
